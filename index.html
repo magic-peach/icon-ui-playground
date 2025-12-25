@@ -5,24 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Icon UI Playground</title>
 
-  <!-- Font Awesome CDN -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-  <header>
-    <h1>Icon UI Playground</h1>
-    <button id="themeToggle">Toggle Theme</button>
+  <header class="navbar">
+    <h1><i class="fa-solid fa-icons"></i> Icon UI Playground</h1>
+    <button id="themeToggle" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
   </header>
 
-  <main>
-    <section class="card">
-      <i class="fas fa-heart"></i>
-      <h3>Icon Card</h3>
-      <p>This is a simple icon-based UI component.</p>
+  <main class="container">
+    <section class="intro">
+      <h2>Beautiful UI with Icons</h2>
+      <p>
+        A beginner-friendly project to explore UI components, icons,
+        and light/dark themes using pure HTML, CSS, and JavaScript.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <i class="fa-solid fa-heart"></i>
+        <h3>Icon Cards</h3>
+        <p>Reusable UI cards with icons and text.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-palette"></i>
+        <h3>Theme Support</h3>
+        <p>Switch between light and dark modes easily.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Clean Code</h3>
+        <p>Simple structure that beginners can understand.</p>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <p>Built for Open Source Contribution Events ❤️</p>
+  </footer>
 
   <script src="js/theme.js"></script>
 </body>
