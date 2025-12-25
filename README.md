@@ -1,19 +1,25 @@
 # 🎨 CSS Animation Gallery
 
-A beginner-friendly frontend project that showcases simple, reusable CSS animations.
-This project is designed for learning, experimenting, and open-source contributions.
+Icon UI Playground is a practical reference application for building
+icon-based UI components with theme and accessibility support.
 
+It is designed to be useful in real-world frontend workflows
+and is open for community contributions.
 ---
 
-## ✨ What This Project Does
+## Why This Project Exists
 
-- Demonstrates small CSS animations (buttons, text, loaders)
-- Uses clean and simple HTML + CSS
-- Supports light and dark themes
-- Respects accessibility preferences like `prefers-reduced-motion`
-- Encourages beginner-friendly open-source contributions
-
+Modern user interfaces rely heavily on icons and subtle interactions.
+This project exists to provide a clean environment where these patterns
+can be tested, reviewed, and improved without the overhead of a full application.
 ---
+
+## Key Capabilities
+
+- Icon-based UI components and interactions
+- Light and dark theme support using CSS variables
+- Accessibility-aware animations (`prefers-reduced-motion`)
+- Clean and reusable component structure
 
 ## 🧩 Project Structure
 ```

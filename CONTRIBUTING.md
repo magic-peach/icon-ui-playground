@@ -1,7 +1,8 @@
 # Contributing to CSS Animation Gallery
 
 Thank you for considering contributing! 🎉  
-This project is designed to be beginner-friendly.
+This project is actively used as a UI reference and is continuously improved.
+Contributions help keep components modern, accessible, and production-ready.
 
 ---
 
