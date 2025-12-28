@@ -91,7 +91,9 @@ For detailed steps, see CONTRIBUTING.md￼.
 
 ⸻
 
-📌 Event Note
+🚧 Repository temporarily frozen 🚧
 
-This repository was created specifically for an open-source contribution event
-to help beginners gain hands-on experience with real-world projects.
+This repository is currently being prepared for an upcoming open-source event.
+Please avoid opening new issues or PRs for now.
+
+We’ll reopen contributions very soon — stay tuned!
