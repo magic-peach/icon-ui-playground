@@ -90,10 +90,3 @@ This project is beginner-friendly and welcomes contributions.
 For detailed steps, see CONTRIBUTING.md￼.
 
 ⸻
-
-🚧 Repository temporarily frozen 🚧
-
-This repository is currently being prepared for an upcoming open-source event.
-Please avoid opening new issues or PRs for now.
-
-We’ll reopen contributions very soon — stay tuned!
