@@ -44,6 +44,8 @@ Every contribution helps improve the quality and usefulness of this tool.
 
 ---
 
+For detailed contribution steps, start by reading [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## 📌 General Contribution Rules
 - Follow **first-come, first-served** for issue assignments
 - **One Pull Request per issue**
