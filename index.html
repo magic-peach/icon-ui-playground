@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/accessibility.css" />
 
   <script src="js/theme.js" defer></script>
   <script src="js/controls.js" defer></script>
@@ -22,8 +22,16 @@
       <p>
         A professional reference for building icon-based UI components with real-time theming and accessibility support.
       </p>
+
       <h2>UI Components & Interactions</h2>
-      <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+      <p class="muted">
+        Each component demonstrates a common real-world UI interaction.
+      </p>
+
+      <button
+        id="themeToggle"
+        class="theme-btn"
+        aria-label="Toggle between light and dark theme">
         Toggle Theme
       </button>
     </div>
@@ -34,7 +42,22 @@
     <section class="intro">
       <h2>Control Panel</h2>
       <p>Adjust animation timing and sensitivity in real-time.</p>
-      <div id="controls-container" class="control-panel"></div>
+
+      <div
+        id="controls-container"
+        class="control-panel"
+        aria-label="Animation control panel">
+      </div>
+    </section>
+
+    <section class="intro">
+      <h2>Purpose</h2>
+      <p>
+        Icon UI Playground is designed as a lightweight reference application
+        for testing and validating icon-based UI components.
+        It helps developers and designers experiment with visual feedback,
+        theming, and accessibility in a realistic UI environment.
+      </p>
     </section>
 
     <section class="use-cases">
@@ -48,9 +71,12 @@
 
     <h3 class="category-title">Buttons</h3>
     <section class="gallery">
-      <a class="card" href="animations/button/button-hover.html">
+      <a
+        class="card"
+        href="animations/button/button-hover.html"
+        aria-label="View hover animation example for a primary action button">
         <div class="card-preview">
-          <div class="preview-btn">Hover Me</div>
+          <div class="preview-btn" aria-hidden="true">Action</div>
         </div>
         <h3>Primary Action</h3>
         <p>Scale and shadow feedback for primary calls-to-action.</p>
@@ -59,9 +85,12 @@
 
     <h3 class="category-title">Text</h3>
     <section class="gallery">
-      <a class="card" href="animations/text/text-fade-in.html">
+      <a
+        class="card"
+        href="animations/text/text-fade-in.html"
+        aria-label="View content reveal animation example">
         <div class="card-preview">
-          <div class="preview-text-lines">
+          <div class="preview-text-lines" aria-hidden="true">
             <span class="line line-1"></span>
             <span class="line line-2"></span>
           </div>
@@ -73,9 +102,12 @@
 
     <h3 class="category-title">Loaders</h3>
     <section class="gallery">
-      <a class="card" href="animations/loader/loader-spin.html">
+      <a
+        class="card"
+        href="animations/loader/loader-spin.html"
+        aria-label="View loading indicator spinner animation example">
         <div class="card-preview">
-          <div class="preview-loader"></div>
+          <div class="preview-loader" aria-hidden="true"></div>
         </div>
         <h3>Spinner</h3>
         <p>Indeterminate state indicator for async tasks.</p>
@@ -85,9 +117,7 @@
   </main>
 
   <footer>
-    <p>
-      Open Source UI Playground • Built for Developers
-    </p>
+    <p>Open Source UI Playground • Built for Developers</p>
   </footer>
 
 </body>
