@@ -149,11 +149,52 @@ document.addEventListener('DOMContentLoaded', () => {
     restartBtn.className = 'theme-btn';
     restartBtn.addEventListener('click', () => {
         restartAnimations();
-        // meaningful feedback: minimal shake or log could go here, 
-        // but the visual jump of the animation is usually enough.
     });
 
     actionsWrapper.appendChild(pauseBtn);
     actionsWrapper.appendChild(restartBtn);
     controlPanel.appendChild(actionsWrapper);
+
+    // Automatic Toast Preview
+    function startToastPreviewLoop() {
+        const previewContainer = document.querySelector('.toast-loader');
+        
+        // Safety check: only run if the element exists (prevents errors on other pages)
+        if (previewContainer) {
+            const loop = async () => {
+                // Check if global animation state is paused
+                const isPaused = getComputedStyle(root).getPropertyValue('--anim-play-state').trim() === 'paused';
+                
+                if (!isPaused) {
+                    await createToast(previewContainer, '✔ Notification');
+                }
+                
+                // Wait 1.5 seconds before showing the next one
+                setTimeout(loop, 1500); 
+            };
+            
+            // Kickstart the loop
+            loop();
+        }
+    }
+
+    // Helper: Creates a toast inside the target container
+    function createToast(container, message) {
+        return new Promise((resolve) => {
+            const toast = document.createElement('div');
+            toast.className = 'toast-preview'; 
+            toast.innerHTML = `<span>${message}</span>`;
+            
+            container.appendChild(toast);
+
+            // Cleanup after animation (3s total duration)
+            setTimeout(() => {
+                toast.remove();
+                resolve(); // Signal that this cycle is done
+            }, 3000);
+        });
+    }
+
+    // Initialize the loop immediately
+    startToastPreviewLoop();
 });
