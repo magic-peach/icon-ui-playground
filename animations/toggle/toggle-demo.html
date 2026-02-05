@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Toggle Switch</title>
+  <link rel="stylesheet" href="../../css/animation-theme.css">
+  <link rel="stylesheet" href="../../css/accessibility.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  
+  <style>
+    :root { --toggle-speed: 0.3s; }
+    
+    .toggle-wrapper {
+      position: relative; width: 50px; height: 28px; display: inline-block;
+    }
+    .toggle-wrapper input { opacity: 0; width: 0; height: 0; }
+    
+    .toggle-slider {
+      position: absolute; cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--border-color);
+      border-radius: 34px;
+      transition: background-color var(--toggle-speed) ease;
+    }
+    .toggle-slider:before {
+      position: absolute; content: "";
+      height: 20px; width: 20px; left: 4px; bottom: 4px;
+      background-color: white; border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform var(--toggle-speed) ease;
+    }
+    input:checked + .toggle-slider { background-color: var(--accent); }
+    input:checked + .toggle-slider:before { transform: translateX(22px); }
+  </style>
+</head>
+<body>
+
+  <section class="component-wrapper">
+    <h3>Animated Toggle</h3>
+
+    <div class="preview">
+      <label class="toggle-wrapper" id="demo-toggle">
+        <input type="checkbox">
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <details>
+      <summary>Show Code</summary>
+      <div class="code-block">
+        <h4>HTML</h4>
+        <pre><code>
+<label class="toggle-wrapper">
+  <input type="checkbox">
+  <span class="toggle-slider"></span>
+</label>
+        </code></pre>
+
+        <h4>CSS</h4>
+        <pre><code>
+.toggle-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 28px;
+}
+
+.toggle-wrapper input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The Slider (Background) */
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #e5e5e5;
+  border-radius: 34px;
+  transition: background-color var(--toggle-speed) ease;
+}
+
+/* The Knob (Circle) */
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform var(--toggle-speed) cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Checked State (ON) */
+input:checked + .toggle-slider {
+  background-color: #4f46e5; /* Theme Accent Color */
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+
+/* Focus State for Accessibility */
+input:focus + .toggle-slider {
+  box-shadow: 0 0 0 2px #f5f5f5, 0 0 0 4px #4f46e5;
+}
+        </code></pre>
+      </div>
+    </details>
+  </section>
+
+  <script>
+    // Theme Support
+    if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
+
+    // Local Preview Loop
+    const checkbox = document.querySelector('#demo-toggle input');
+    function loop() {
+      checkbox.checked = !checkbox.checked;
+      setTimeout(loop, 1500);
+    }
+    loop();
+
+    document.querySelector('input[type="checkbox"]').addEventListener('click', function(event) {
+        event.preventDefault();
+     });
+  </script>
+</body>
+</html>

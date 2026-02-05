@@ -45,6 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
             varName: '--spin-duration',
             unit: 's',
             defaultValue: 1
+        },
+        {
+            id: 'toggle-speed',
+            label: 'Toggle Switch Speed',
+            type: 'range',
+            min: '0.1',
+            max: '1.0',
+            step: '0.1',
+            varName: '--toggle-speed',
+            unit: 's',
+            defaultValue: 0.3
         }
     ];
 
@@ -195,6 +206,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Automatic Toggle Switch Preview
+    function startTogglePreviewLoop() {
+        const toggleCheckbox = document.querySelector('.preview-toggle input');
+        
+        if (toggleCheckbox) {
+            const loop = () => {
+                // Check if paused
+                const isPaused = getComputedStyle(root).getPropertyValue('--anim-play-state').trim() === 'paused';
+                
+                if (!isPaused) {
+                    // Simply flip the checked state
+                    toggleCheckbox.checked = !toggleCheckbox.checked;
+                }
+                
+                // Flip every 1.5 seconds
+                setTimeout(loop, 1500);
+            };
+            loop();
+        }
+    }
+
     // Initialize the loop immediately
     startToastPreviewLoop();
+    startTogglePreviewLoop();
 });
